@@ -1373,7 +1373,7 @@ static void SetSafetyNetProps() {
     // Bail out if this is recovery, fastbootd, or anything other than a normal boot.
     // fastbootd, in particular, needs the real values so it can allow flashing on
     // unlocked bootloaders.
-    if (!isNormalBoot) {
+    if (!isNormalBoot || isRecoveryMode()) {
         return;
     }
 
